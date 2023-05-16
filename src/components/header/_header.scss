@@ -18,7 +18,7 @@
     background: url("../../assets/Icons/search.svg") no-repeat 13px center;
     background-size: 1.25rem;
     margin-bottom: 1rem;
-    width: 65%;
+    width: 80%;
     background-color: $form-field-background-color;
     border-color: $divider-line;
     border-radius: 4px;
@@ -26,6 +26,16 @@
     font-weight: 700;
     color: $primary-text-color;
     }
+
+    
+    &__img {
+        width: 2.25rem;
+        height:2.25rem;
+        border-radius: 50%;
+        position: relative;
+        left:1rem;
+        top:0.75rem;
+        }
 
     &__button{
     width: 100%;
@@ -37,20 +47,5 @@
     color:$background-color;
     line-height: 1.25rem;
     font-weight: 700;
-    }
-
-    &__input-wrapper {
-    margin-top: 1rem;
-    position: absolute;
-    width:90%;
-    }
-
-    &__img {
-    width: 2.25rem;
-    height:2.25rem;
-    border-radius: 50%;
-    position: relative;
-    left:1rem;
-    top:0.75rem;
     }
 }
