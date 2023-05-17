@@ -12,6 +12,7 @@ function App() {
     <>
       <Header />
       <Hero activeVideo={activeVideo}/>
+      <Main activeVideo={activeVideo}/>
     </>
   );
 }

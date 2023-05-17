@@ -1,0 +1,39 @@
+@import '../../styles/partials/variables';
+@import '../../styles/partials/mixins';
+
+.commentForm{
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__image{
+        width: 2.25rem;
+        height:2.25rem;
+        border-radius: 50%;
+        position: relative;
+        top:1.7rem;
+    }
+
+    &__title{
+        margin:0;
+        font-weight: 700;
+        color: $secondary-text-color;
+        
+    }
+
+    &__input{
+        width:100%;
+        padding:0.75rem;
+        margin: 0.5rem 0 0.75rem 0;
+        border: 1px solid $divider-line;
+        border-radius: 4px;
+    }
+
+    &__button{
+        width:100%;
+        background: url("../../assets/Icons/add_comment.svg")no-repeat 13px center;
+        @include cta;
+    }
+
+}

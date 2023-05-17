@@ -1,0 +1,30 @@
+@import '../../styles/partials/variables';
+
+.comment{
+    &__wrapper{
+        display: flex;
+        border-top: 1px solid $divider-line;
+        margin-top: 1rem;
+    }
+
+    &__image{
+        background-color: $divider-line;
+        width: 2.25rem;
+        height:2.25rem;
+        border-radius: 50%;
+        padding-right: 2.25rem;
+    }
+
+    &__name-date-wrapper{
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+    }
+
+    &__time{
+        color: $secondary-text-color;
+    }
+       
+    
+
+}

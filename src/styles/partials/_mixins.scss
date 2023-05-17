@@ -11,3 +11,13 @@
         @content;
     }
 }
+
+@mixin cta{
+    background-color: $primary-cta-color;
+    border: 0;
+    padding: 0.75rem;
+    border-radius: 4px;
+    color:$background-color;
+    line-height: 1.25rem;
+    font-weight: 700;
+}
