@@ -5,6 +5,10 @@
         display: flex;
         border-top: 1px solid $divider-line;
         margin-top: 1rem;
+        justify-content: space-between;
+        &:last-child{
+            border-bottom: 1px solid $divider-line;
+        }
     }
 
     &__image{
@@ -13,7 +17,10 @@
         height:2.25rem;
         border-radius: 50%;
         padding-right: 2.25rem;
+        position: relative;
+        top: 1.2rem;
     }
+
 
     &__name-date-wrapper{
         display: flex;

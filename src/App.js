@@ -8,11 +8,16 @@ import './App.scss';
 function App() {
   const [activeVideo, setActiveVideo]= useState(Data[0]);
 
+  const changeActiveVideo =(id)=>{
+    setActiveVideo(id);
+  };
+
   return (
     <>
       <Header />
       <Hero activeVideo={activeVideo}/>
       <Main activeVideo={activeVideo}/>
+      
     </>
   );
 }
