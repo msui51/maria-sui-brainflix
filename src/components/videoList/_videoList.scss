@@ -1,0 +1,23 @@
+@import '../../styles/partials/variables';
+
+.videoList {
+    &__wrapper{
+        padding: 1rem 1rem 0 1rem;
+    }
+
+    &__title{
+        color:$secondary-text-color;
+        padding-bottom: 1rem;
+        font-size:16px;
+    }
+
+    &__list{
+        list-style-type: none;
+        padding-left: 0;
+    }
+    &__item{
+        display: flex;
+        padding-bottom: 0.75rem;
+    }
+    
+}

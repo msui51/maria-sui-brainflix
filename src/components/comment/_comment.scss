@@ -5,10 +5,8 @@
         display: flex;
         border-top: 1px solid $divider-line;
         margin-top: 1rem;
-        justify-content: space-between;
-        &:last-child{
-            border-bottom: 1px solid $divider-line;
-        }
+        // justify-content: space-between;
+        
     }
 
     &__image{
@@ -21,6 +19,9 @@
         top: 1.2rem;
     }
 
+    &__wrapper--right{
+        margin-left:1rem;
+    }
 
     &__name-date-wrapper{
         display: flex;
@@ -32,6 +33,9 @@
         color: $secondary-text-color;
     }
        
-    
+    &__text{
+        line-height: 25px;
+        margin-top: 0;
+    }
 
 }

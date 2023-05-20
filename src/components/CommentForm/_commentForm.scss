@@ -4,7 +4,7 @@
 .commentForm{
     &__wrapper{
         display: flex;
-        justify-content: space-between;
+        // justify-content: space-between;
     }
 
     &__image{
@@ -13,13 +13,13 @@
         border-radius: 50%;
         position: relative;
         top:1.7rem;
+        margin-right: 1rem;
     }
 
     &__title{
         margin:0;
         font-weight: 700;
         color: $secondary-text-color;
-        
     }
 
     &__input{
@@ -28,6 +28,7 @@
         margin: 0.5rem 0 0.75rem 0;
         border: 1px solid $divider-line;
         border-radius: 4px;
+        font-size: 1rem;
     }
 
     &__button{

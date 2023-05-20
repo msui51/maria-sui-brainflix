@@ -1,5 +1,28 @@
+@import '../../styles/partials/variables';
+
 .commentList{
     &__wrapper{
         padding:0 1rem;
     }
+
+    &__title{
+        font-size: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    &__list{
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    &__item{
+        display: flex;
+        // justify-content: space-between;
+        border-top: 1px solid $divider-line;
+        &:last-child{
+            border-bottom: 1px solid $divider-line;
+        }
+    }
+
+    
 }
