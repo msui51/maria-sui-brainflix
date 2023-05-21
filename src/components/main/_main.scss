@@ -1,9 +1,13 @@
 @import '../../styles/partials/variables';
+@import '../../styles/partials/mixins';
 
 .main{
 
     &__wrapper{
         padding:1rem;
+        @include tablet{
+            padding: 1rem 3rem;
+        }
     }
 
     &__title{
@@ -14,13 +18,35 @@
         display: flex;
         align-items: baseline;
         justify-content: space-between;
-        
         border-top: 1px solid $divider-line;
         border-bottom: 1px solid $divider-line;
+        @include tablet{
+            border-top: 0;
+        }
+    }
+
+    &__sub-wrapper--left{
+        @include tablet{
+            display: flex;
+            align-items: baseline;
+            width:30%;
+            justify-content: space-between;
+        }
     }
 
     &__sub-wrapper--right{
         margin-right: 4rem;
+        @include tablet{
+            display: flex;
+            align-items: last baseline;
+            justify-content: space-between;
+            margin-right: 0;
+            width: 33%;
+        }
+    }
+
+    &__sub-title{
+        font-size: 1rem;
     }
 
     &__icon-wrapper:first-child{
