@@ -1,0 +1,8 @@
+@import '../../styles/partials/variables';
+
+.hero {
+    &__wrapper{
+        padding: 0 3rem 0 3rem;
+        background-color: $video-player-component;
+    }
+}
