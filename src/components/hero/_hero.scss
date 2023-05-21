@@ -1,8 +1,11 @@
 @import '../../styles/partials/variables';
+@import '../../styles/partials/mixins';
 
 .hero {
     &__wrapper{
+        @include tablet{
         padding: 0 3rem 0 3rem;
         background-color: $video-player-component;
+        }
     }
 }
