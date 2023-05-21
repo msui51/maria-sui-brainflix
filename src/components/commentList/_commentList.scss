@@ -2,12 +2,12 @@
 @import '../../styles/partials/mixins';
 
 .commentList{
-    &__wrapper{
-        padding:0 1rem;
-        @include tablet{
-            padding: 0 3rem;
-        }
-    }
+    // &__wrapper{
+    //     padding:0 1rem;
+    //     @include tablet{
+    //         padding: 0 3rem;
+    //     }
+    // }
 
     &__title{
         font-size: 1rem;
@@ -26,6 +26,14 @@
         &:last-child{
             border-bottom: 1px solid $divider-line;
         }
+        @include desktop{
+            padding: 1rem 1.5rem 1rem 0;
+            &:last-child{
+                border-bottom: 0;
+            }
+        }
+
+        
     }
 
     

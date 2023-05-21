@@ -24,12 +24,15 @@ function App() {
     <>
       <Header />
       <Hero activeVideo={activeVideo}/>
-      <Main activeVideo={activeVideo}/>
-      <VideoList 
+      <Main activeVideo={activeVideo}
+            videoList={videoList}
+            changeActiveVideo={changeActiveVideo}
+      />
+      {/* <VideoList 
         videoList={videoList}
         changeActiveVideo={changeActiveVideo}
         activeVideo={activeVideo}
-      />
+      /> */}
     </>
   );
 }

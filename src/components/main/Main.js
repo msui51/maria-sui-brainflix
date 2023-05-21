@@ -1,6 +1,7 @@
 import Views from '../../assets/Icons/views.svg'
 import Likes from '../../assets/Icons/likes.svg'
 import CommentLIst from '../commentList/CommentList';
+import VideoList from '../videoList/VideoList';
 import './_main.scss';
 
 function Main(props) {
@@ -8,7 +9,7 @@ function Main(props) {
 
 
   return (
-    <>
+    <div className="main__wrapper--all">
       <div className="main__wrapper">
           <h1 className="main__title">{props.activeVideo.title}</h1>
           <div className='main__sub-wrapper'>
@@ -25,9 +26,15 @@ function Main(props) {
             </div>  
           </div>
           <p className='main__text'>{props.activeVideo.description}</p>
+          <CommentLIst activeVideo={props.activeVideo}/>
       </div>
-      <CommentLIst activeVideo={props.activeVideo}/>
-    </>
+      {/* <CommentLIst activeVideo={props.activeVideo}/> */}
+      <VideoList 
+        videoList={props.videoList}
+        changeActiveVideo={props.changeActiveVideo}
+        activeVideo={props.activeVideo}
+      />
+    </div>
   )
 }
 

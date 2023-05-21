@@ -59,6 +59,9 @@
             width:100%;
             align-items: center;
         }
+        @include desktop{
+            padding-right: 1.5rem;
+        }
     }
 
 }

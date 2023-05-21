@@ -7,11 +7,15 @@
         @include tablet{
             padding: 1rem 3rem 0 3rem;
         }
+        @include desktop{
+            border-left: 1px solid $divider-line;
+            padding: 1.5rem 0 0 1.5rem;
+        }
     }
 
     &__title{
         color:$secondary-text-color;
-        padding-bottom: 1rem;
+        padding-bottom: 0.75rem;
         font-size:16px;
     }
 
@@ -24,6 +28,9 @@
         padding-bottom: 0.75rem;
         @include tablet {
             width: 60%;
+        }
+        @include desktop{
+            width: 100%;
         }
     }
     

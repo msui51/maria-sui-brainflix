@@ -1,3 +1,4 @@
+@import '../../styles/partials/mixins';
 
 .video {
     &__wrapper{
@@ -22,8 +23,16 @@
         max-height: 100px;
         border-radius: 4px;
         object-fit: cover;
+        @include desktop{
+            height: 85%;
+            
+        }
     }
     &__title{
         margin-top: 0;
+        @include desktop{
+            margin-bottom: 0;
+        }
     }
+
 }
