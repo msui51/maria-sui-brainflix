@@ -24,17 +24,41 @@
 
     &__input{
         width:100%;
-        padding:0.75rem;
+        padding:0.75rem 0 4rem 0.75rem;
         margin: 0.5rem 0 0.75rem 0;
         border: 1px solid $divider-line;
         border-radius: 4px;
         font-size: 1rem;
+        @include tablet{
+            padding: 0.75rem 0 0 0.75rem;
+            margin-bottom: 1rem;
+            
+        }
+    }
+
+    &__input-wrapper{
+        @include tablet{
+            width: 65%;
+        }
     }
 
     &__button{
         width:100%;
         background: url("../../assets/Icons/add_comment.svg")no-repeat 13px center;
         @include cta;
+        @include tablet{
+            width: 30%;
+            padding: 0.9rem 0;
+        }
+    }
+
+    &__wrapper--right{
+        @include tablet{
+            display: flex;
+            justify-content: space-between;
+            width:100%;
+            align-items: center;
+        }
     }
 
 }
