@@ -1,11 +1,21 @@
 @import '../../styles/partials/_variables.scss';
+@import '../../styles/partials/mixins';
 
 .header{
     padding:1rem;
+    @include tablet{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 3rem 1rem 3rem;
+    }
 
     &__logo-wrapper {
     display: flex;
     justify-content: center;
+    @include tablet{
+        align-items: center;
+    }
     }
 
     &__logo{
@@ -25,6 +35,20 @@
     line-height: 1.25rem;
     font-weight: 700;
     color: $primary-text-color;
+    @include tablet{
+        margin-bottom: 0;
+        width:100%;
+        padding: 0.75rem 0 0.75rem 2.75rem;
+    }
+    }
+
+    &__input-wrapper{
+        @include tablet{
+            display: flex;
+            align-items: center;
+            margin-right: 3rem;
+            width: 60%;
+        }
     }
 
     
@@ -35,7 +59,11 @@
         position: relative;
         left:1rem;
         top:0.75rem;
+        @include tablet{
+          left: 14.5rem;
+          top: -0.075rem;  
         }
+    }
 
     &__button{
     width: 100%;
