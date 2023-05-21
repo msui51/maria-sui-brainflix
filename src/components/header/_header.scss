@@ -8,6 +8,9 @@
         flex-direction: row;
         justify-content: space-between;
         padding: 1rem 3rem 1rem 3rem;
+        @include desktop{
+            padding: 1rem 6rem 1rem 6rem;
+        }
     }
 
     &__logo-wrapper {
@@ -40,6 +43,9 @@
         width:100%;
         padding: 0.75rem 0 0.75rem 2.75rem;
     }
+    @include desktop{
+        
+    }
     }
 
     &__input-wrapper{
@@ -48,6 +54,9 @@
             align-items: center;
             margin-right: 3rem;
             width: 60%;
+            @include desktop{
+                width: 50%;
+            }
         }
     }
 
@@ -62,6 +71,8 @@
         @include tablet{
           left: 14.5rem;
           top: -0.075rem;  
+          width: 2.5rem;
+          height: 2.5rem;
         }
     }
 
@@ -75,5 +86,9 @@
     color:$background-color;
     line-height: 1.25rem;
     font-weight: 700;
+        @include desktop{
+            width: 50%;
+        }
     }
+
 }
