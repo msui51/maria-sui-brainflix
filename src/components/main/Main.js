@@ -18,17 +18,13 @@ function Main(props) {
               <p className='main__sub-text'>{commentTime}</p>
             </div>
             <div className='main__sub-wrapper--right'>
-              
-                <p className='main__icon-wrapper'><img className="main__icon" src={Views} alt="eye icon"></img><span className='main__sub-text'>{props.activeVideo.views}</span></p>
-              
-                <p className='main__icon-wrapper'><img className="main__icon" src={Likes} alt="heart icon"></img><span className='main__sub-text'>{props.activeVideo.likes}</span></p>
-              
+              <p className='main__icon-wrapper'><img className="main__icon" src={Views} alt="eye icon"></img><span className='main__sub-text'>{props.activeVideo.views}</span></p>
+              <p className='main__icon-wrapper'><img className="main__icon" src={Likes} alt="heart icon"></img><span className='main__sub-text'>{props.activeVideo.likes}</span></p>
             </div>  
           </div>
           <p className='main__text'>{props.activeVideo.description}</p>
           <CommentLIst activeVideo={props.activeVideo}/>
       </div>
-      {/* <CommentLIst activeVideo={props.activeVideo}/> */}
       <VideoList 
         videoList={props.videoList}
         changeActiveVideo={props.changeActiveVideo}

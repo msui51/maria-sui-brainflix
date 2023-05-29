@@ -15,6 +15,8 @@ function VideoList(props) {
             onClick={()=> props.changeActiveVideo(video.id)}       
             >
             <Video 
+                key={video.id}
+                id={video.id}
                 image={video.image}
                 title={video.title}
                 author={video.channel} 

@@ -2,39 +2,34 @@
 @import '../../styles/partials/mixins';
 
 .commentList{
-    // &__wrapper{
-    //     padding:0 1rem;
-    //     @include tablet{
-    //         padding: 0 3rem;
-    //     }
-    // }
+    
+    //section title//
 
     &__title{
         font-size: 1rem;
         padding-bottom: 1rem;
     }
 
+    //wraps all the comments//
+
     &__list{
         list-style-type: none;
         padding-left: 0;
     }
 
+    //individual comments//
+
     &__item{
         display: flex;
-        // justify-content: space-between;
         border-top: 1px solid $divider-line;
         &:last-child{
             border-bottom: 1px solid $divider-line;
         }
         @include desktop{
-            padding: 1rem 1.5rem 1rem 0;
+            padding: 0.5rem 1.5rem 0.5rem 0;
             &:last-child{
                 border-bottom: 0;
             }
         }
-
-        
     }
-
-    
 }

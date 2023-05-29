@@ -2,13 +2,17 @@
 @import '../../styles/partials/mixins';
 
 .main{
+
+    //wraps main title to video list//
+
     &__wrapper--all{
         @include desktop{
             display: flex;
             padding: 1rem 6rem;
         }
-        
     }
+
+    //wraps main title to comment list//
 
     &__wrapper{
         padding:1rem;
@@ -24,6 +28,8 @@
     &__title{
         margin-bottom: 1rem;
     }
+    
+    //wraps author, date, views, and likes//
 
     &__sub-wrapper{
         display: flex;
@@ -36,6 +42,8 @@
         }
     }
 
+    //wraps author and date//
+
     &__sub-wrapper--left{
         @include tablet{
             display: flex;
@@ -44,6 +52,8 @@
             justify-content: space-between;
         }
     }
+
+    //wraps views and likes//
 
     &__sub-wrapper--right{
         margin-right: 4rem;
@@ -59,33 +69,43 @@
         }
     }
 
+    //author//
+
     &__sub-title{
         font-size: 1rem;
     }
+
+    //wraps views//
 
     &__icon-wrapper:first-child{
         margin-bottom: 19.920px;
     }
 
+    //wraps likes//
+
     &__icon-wrapper:last-child{
         display: flex;
     }
+
+    //views and likes icons//
 
     &__icon{
         padding-right: 0.5rem;
         fill:$secondary-text-color;
     }
     
-    
+    //date//
 
     &__sub-text{
         color: $secondary-text-color;
     }
 
+    //description//
+
     &__text{
         line-height: 25px;
         @include desktop{
-            padding: 1rem 1.5rem 2rem 0;
+            padding: 0.75rem 1.5rem 2rem 0;
         }
     }
 }

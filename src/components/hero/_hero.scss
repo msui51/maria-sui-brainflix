@@ -2,6 +2,9 @@
 @import '../../styles/partials/mixins';
 
 .hero {
+
+    //wraps everything//
+    
     &__wrapper{
         @include tablet{
         padding: 0 3rem 0 3rem;
@@ -10,7 +13,5 @@
         @include desktop{
             padding: 0 9rem 0 9rem;
         }
-
-        
     }
 }

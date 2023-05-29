@@ -1,16 +1,10 @@
 import './_video.scss'
 
 function Video(props) {
-  // function truncateString(str){
-  //   return str.length>40 ? str.substring(0,35) + "...": str;
-  // }
-
-
-
+  
   return (
     
     <>
-        
         <div className="video__wrapper--left">
             <img className="video__image" src={props.image} alt="video images"></img>
         </div>

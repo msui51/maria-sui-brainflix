@@ -2,10 +2,13 @@
 @import '../../styles/partials/mixins';
 
 .videoList {
+
+    //wraps all the videos//
+
     &__wrapper{
-        padding: 1rem 1rem 0 1rem;
+        padding: 0.5rem 1rem 0 1rem;
         @include tablet{
-            padding: 1rem 3rem 0 3rem;
+            padding: 0.5rem 3rem 0 3rem;
         }
         @include desktop{
             border-left: 1px solid $divider-line;
@@ -13,16 +16,23 @@
         }
     }
 
+    // title of the section//
+
     &__title{
         color:$secondary-text-color;
         padding-bottom: 0.75rem;
         font-size:16px;
     }
 
+    // list of all the videos//
+
     &__list{
         list-style-type: none;
         padding-left: 0;
     }
+
+    //individual videos// 
+
     &__item{
         display: flex;
         padding-bottom: 0.75rem;

@@ -2,9 +2,11 @@
 @import '../../styles/partials/mixins';
 
 .commentForm{
+
+    //wraps entire section//
+
     &__wrapper{
         display: flex;
-        // justify-content: space-between;
     }
 
     &__image{
@@ -16,42 +18,8 @@
         margin-right: 1rem;
     }
 
-    &__title{
-        margin:0;
-        font-weight: 700;
-        color: $secondary-text-color;
-    }
-
-    &__input{
-        width:100%;
-        padding:0.75rem 0 4rem 0.75rem;
-        margin: 0.5rem 0 0.75rem 0;
-        border: 1px solid $divider-line;
-        border-radius: 4px;
-        font-size: 1rem;
-        @include tablet{
-            padding: 0.75rem 0 0 0.75rem;
-            margin-bottom: 1rem;
-            
-        }
-    }
-
-    &__input-wrapper{
-        @include tablet{
-            width: 65%;
-        }
-    }
-
-    &__button{
-        width:100%;
-        background: url("../../assets/Icons/add_comment.svg")no-repeat 13px center;
-        @include cta;
-        @include tablet{
-            width: 30%;
-            padding: 0.9rem 0;
-        }
-    }
-
+    //wraps input title, form, and button//
+    
     &__wrapper--right{
         @include tablet{
             display: flex;
@@ -64,4 +32,44 @@
         }
     }
 
+    //wraps input title and form//
+
+    &__input-wrapper{
+        @include tablet{
+            width: 65%;
+        }
+    }
+
+    //input title//
+
+    &__title{
+        margin:0;
+        font-weight: 700;
+        color: $secondary-text-color;
+    }
+
+    //input area//
+
+    &__input{
+        width:100%;
+        padding:0.75rem 0 4rem 0.75rem;
+        margin: 0.5rem 0 0.75rem 0;
+        border: 1px solid $divider-line;
+        border-radius: 4px;
+        font-size: 1rem;
+        @include tablet{
+            padding: 0.75rem 0 0 0.75rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__button{
+        width:100%;
+        background: url("../../assets/Icons/add_comment.svg")no-repeat 13px center;
+        @include cta;
+        @include tablet{
+            width: 30%;
+            padding: 0.9rem 0;
+        }
+    }
 }

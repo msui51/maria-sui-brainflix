@@ -5,7 +5,6 @@ function Comment(props) {
   
   return (
    <>
-    {/* <div className="comment__wrapper">  */}
       <div className="comment__image"></div>
       <div className="comment__wrapper--right">
         <div className="comment__name-date-wrapper">
@@ -14,7 +13,6 @@ function Comment(props) {
         </div>
         <p className="comment__text">{props.comment}</p>
       </div>
-    {/* </div> */}
   </>
   )
 }

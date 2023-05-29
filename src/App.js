@@ -11,6 +11,8 @@ function App() {
   const [activeVideo, setActiveVideo]= useState(Data[0]);
   const [videoList, setVideoList]= useState(Data);
   
+
+  
   const changeActiveVideo =(id)=>{
     videoList.forEach((video)=>{
       if (id === video.id){
@@ -22,17 +24,12 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header/>
       <Hero activeVideo={activeVideo}/>
       <Main activeVideo={activeVideo}
             videoList={videoList}
             changeActiveVideo={changeActiveVideo}
       />
-      {/* <VideoList 
-        videoList={videoList}
-        changeActiveVideo={changeActiveVideo}
-        activeVideo={activeVideo}
-      /> */}
     </>
   );
 }

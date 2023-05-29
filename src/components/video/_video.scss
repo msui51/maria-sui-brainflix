@@ -1,20 +1,26 @@
 @import '../../styles/partials/mixins';
+@import '../../styles/partials/variables';
+
 
 .video {
-    &__wrapper{
-        display: flex;
-    }
+
+    //wraps the video image//
+
     &__wrapper--left{
        width: 40%;
        flex-shrink: 0;
        margin-right: 1rem;
     }
 
+    //wraps everything on the right of the image//
+
     &__wrapper--right{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
+
+    //video image//
 
     &__image{
         width:100%;
@@ -25,9 +31,11 @@
         object-fit: cover;
         @include desktop{
             height: 85%;
-            
         }
     }
+
+    //video title// 
+    
     &__title{
         margin-top: 0;
         @include desktop{

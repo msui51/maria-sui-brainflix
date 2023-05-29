@@ -2,9 +2,9 @@ import './_header.scss';
 import logo from '../../assets/Logo/BrainFlix-logo.svg';
 import image from '../../assets/Images/Mohan-muruge.jpg';
 
-function Header() {
+function Header(props) {
   return (
-    <header className="header">
+    <header className="header__wrapper">
         <div className="header__logo-wrapper">
             <img className="header__logo" src={logo} alt="play logo"></img>
         </div>
