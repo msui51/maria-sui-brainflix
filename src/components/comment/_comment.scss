@@ -1,0 +1,43 @@
+@import '../../styles/partials/variables';
+@import '../../styles/partials/mixins';
+
+.comment{
+
+    &__image{
+        background-color: $divider-line;
+        width: 2.25rem;
+        height:2.25rem;
+        border-radius: 50%;
+        padding-right: 2.25rem;
+        position: relative;
+        top: 1.2rem;
+    }
+
+    //wraps everything right of the image//
+
+    &__wrapper--right{
+        margin-left:1rem;
+    }
+
+    //wraps just name and time//
+
+    &__name-date-wrapper{
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+    }
+
+    //comment time//
+
+    &__time{
+        color: $secondary-text-color;
+    }
+       
+    //comment text//
+    
+    &__text{
+        line-height: 25px;
+        margin-top: 0;
+    }
+
+}

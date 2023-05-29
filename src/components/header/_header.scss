@@ -1,0 +1,113 @@
+@import '../../styles/partials/_variables.scss';
+@import '../../styles/partials/mixins';
+
+.header {
+
+    //wraps everything//
+
+    &__wrapper{
+    padding:1rem;
+    @include tablet{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 3rem 1rem 3rem;
+    }
+        @include desktop{
+            padding: 1rem 6rem 1rem 6rem;
+        }
+    }
+
+    //wraps the logo//
+
+    &__logo-wrapper {
+    display: flex;
+    justify-content: center;
+        @include tablet{
+            align-items: center;
+        }
+    }
+
+    &__logo{
+        width: 7.5rem;
+        height:1.5rem;
+    }
+
+    //wraps search bar, image, and button//
+
+    &__input-wrapper{
+        @include tablet{
+            display: flex;
+            align-items: center;
+            margin-right: 3rem;
+            width: 60%;
+        }
+        @include desktop{
+            width: 50%;
+        }
+    }
+
+    //search bar//
+    
+    &__input{
+        padding: 0.5rem 0 0.5rem 2.75rem;
+        background: url("../../assets/Icons/search.svg") no-repeat 13px center;
+        background-size: 1.25rem;
+        margin-bottom: 1rem;
+        width: 85%;
+        background-color: $form-field-background-color;
+        border:1px solid $divider-line;
+        border-radius: 4px;
+        line-height: 1.25rem;
+        font-weight: 700;
+        color: $primary-text-color;
+        @include tablet{
+            margin-bottom: 0;
+            width:100%;
+            padding: 0.75rem 0 0.75rem 2.75rem;
+        }
+    }
+
+    //image//
+
+    &__img {
+        width: 2.25rem;
+        height:2.25rem;
+        border-radius: 50%;
+        position: relative;
+        left:1rem;
+        top:0.75rem;
+        @include tablet{
+          left: 14.5rem;
+          top: -0.075rem;  
+          width: 2.5rem;
+          height: 2.5rem;
+        }
+    }
+
+    //if no image is not provided//
+
+    &__no-img{
+        background-color: $divider-line;
+        width: 2.25rem;
+        height:2.25rem;
+        border-radius: 50%;
+    }
+
+    //upload button//
+    
+    &__button{
+    width: 100%;
+    background: url("../../assets/Icons/upload.svg") no-repeat 13px center;
+    background-color: $primary-cta-color;
+    border: 0;
+    padding: 0.75rem;
+    border-radius: 4px;
+    color:$background-color;
+    line-height: 1.25rem;
+    font-weight: 700;
+        @include desktop{
+            width: 50%;
+        }
+    }
+}
