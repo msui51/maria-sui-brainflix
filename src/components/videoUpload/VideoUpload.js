@@ -10,28 +10,30 @@ function VideoUpload() {
                 <label className="main__label" for="image">VIDEO THUMBNAIL</label>
                 <img className="main__image" src={thumbnail} alt="blue bike"></img>
             </div>
-            <form className="main__form">
-                <label className="main__label" 
-                       for="title">
-                    TITLE YOUR VIDEO
-                </label>
-                <input className="main__input main__input--title" 
-                       type="text" 
-                       id="text" 
-                       name="text" 
-                       placeholder="Add a title to your video">
-                </input>
-                <label className="main__label" 
-                       for ="description">
-                    ADD A VIDEO DESCRIPTION
-                </label>
-                <input className="main__input main__input--description" 
-                       type="text" 
-                       id="text" 
-                       name="text" 
-                       placeholder="Add a description to your video">    
-                </input>
-            </form>
+            <div className="main__form-wrapper">
+                <form className="main__form">
+                    <label className="main__label" 
+                        for="title">
+                        TITLE YOUR VIDEO
+                    </label>
+                    <input className="main__input main__input--title" 
+                        type="text" 
+                        id="text" 
+                        name="text" 
+                        placeholder="Add a title to your video">
+                    </input>
+                    <label className="main__label" 
+                        for ="description">
+                        ADD A VIDEO DESCRIPTION
+                    </label>
+                    <input className="main__input main__input--description" 
+                        type="text" 
+                        id="text" 
+                        name="text" 
+                        placeholder="Add a description to your video">    
+                    </input>
+                </form>
+            </div>
         </div>
         <div className="main__button-wrapper">
             <button className="main__button">PUBLISH</button>
