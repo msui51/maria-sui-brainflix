@@ -21,10 +21,10 @@
     //wraps input title, form, and button//
     
     &__wrapper--right{
+        width: 100%;
         @include tablet{
             display: flex;
             justify-content: space-between;
-            width:100%;
             align-items: center;
         }
         @include desktop{
