@@ -26,8 +26,8 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<HomePage activeVideo={activeVideo}
-                                          videoList={videoList}
-                                          changeActiveVideo={changeActiveVideo}/>}/>
+                                           videoList={videoList}
+                                           changeActiveVideo={changeActiveVideo}/>}/>
         <Route path="/upload" element ={<VideoUploadPage/>} />
       </Routes>
       </BrowserRouter>   
