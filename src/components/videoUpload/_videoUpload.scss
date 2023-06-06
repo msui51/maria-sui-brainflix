@@ -5,9 +5,24 @@
 .main{
     border-top: 1px solid $divider-line;
     padding: 1rem 1rem;
+    @include tablet{
+        padding: 1rem 3rem;
+    }
+
+    &__title{
+        @include tablet{
+        padding-bottom: 1rem;
+        }
+    }
 
     &__wrapper{
         padding:0;
+        @include tablet{
+        padding-bottom: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid $divider-line;
+        border-bottom:1px solid $divider-line;
+        }
     }
 
     &__image{
@@ -15,6 +30,10 @@
         height:100%;
         border-radius: 4px;
         margin-bottom: 0.5rem;
+        @include tablet{
+            width: 50%;
+            height:50%;
+        }
     }
 
     &__label{
@@ -43,6 +62,10 @@
 
     &__button-wrapper{
         margin-top: 2rem;
+        @include tablet{
+            display:flex;
+            flex-direction: row-reverse;
+        }
     }
 
     &__button{
@@ -51,6 +74,10 @@
         margin-bottom: 2rem;
         background:url("../../assets/Icons/publish.svg") no-repeat 13px center;
         @include cta;
+        @include tablet{
+            display:inline;
+            width: 25%;
+        }
     }
 
     &__button--different{

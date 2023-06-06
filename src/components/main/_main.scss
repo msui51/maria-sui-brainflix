@@ -4,9 +4,8 @@
 .main{
 
     //wraps main title to video list//
-
     &__wrapper--all{
-        @include desktop{
+    @include desktop{
             display: flex;
             padding: 1rem 6rem;
         }
