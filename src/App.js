@@ -1,10 +1,9 @@
 import Header from './components/header/Header';
-import Hero from './components/hero/Hero';
-import Main from './components/main/Main';
 import Data from '../src/assets/Data/video-details.json';
-import List from '../src/assets/Data/videos.json';
-import VideoList from './components/videoList/VideoList';
+import HomePage from '../src/pages/HomePage/HomePage';
+import VideoUploadPage from '../src/pages/VideoUploadPage/VideoUploadPage';
 import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.scss';
 
 function App() {
@@ -23,14 +22,15 @@ function App() {
   };
 
   return (
-    <>
+    <BrowserRouter>
       <Header/>
-      <Hero activeVideo={activeVideo}/>
-      <Main activeVideo={activeVideo}
-            videoList={videoList}
-            changeActiveVideo={changeActiveVideo}
-      />
-    </>
+      <Routes>
+        <Route path="/" element={<HomePage activeVideo={activeVideo}
+                                          videoList={videoList}
+                                          changeActiveVideo={changeActiveVideo}/>}/>
+        <Route path="/upload" element ={<VideoUploadPage/>} />
+      </Routes>
+      </BrowserRouter>   
   );
 }
 
