@@ -2,7 +2,7 @@
 @import '../../styles/partials/mixins';
 
 
-.upLoad{
+.upload{
     border-top: 1px solid $divider-line;
     padding: 1rem 1rem;
     @include tablet{
@@ -24,7 +24,6 @@
         padding-bottom: 2rem;
         padding-top: 1rem;
         border-top: 1px solid $divider-line;
-        border-bottom:1px solid $divider-line;
         }
         @include desktop{
             display:flex;
@@ -94,7 +93,10 @@
         @include tablet{
             display:flex;
             flex-direction: row-reverse;
+            border-top: 1px solid $divider-line;
+            padding-top: 2rem;
         }
+      
     }
 
     &__button{
@@ -108,7 +110,7 @@
             width: 25%;
         }
         @include desktop{
-            width: 17%;
+            width: 25%;
         }
     }
 
@@ -116,4 +118,6 @@
         background-color: white;
         color: $primary-cta-color;
     }
+
+  
 }

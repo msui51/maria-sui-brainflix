@@ -1,0 +1,1 @@
+export const API_URL="https://project-2-api.herokuapp.com";
