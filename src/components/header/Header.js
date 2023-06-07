@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 function Header(props) {
+  
+
 
 
   return (
@@ -15,7 +17,7 @@ function Header(props) {
         <div className="header__input-wrapper">                
             <input className="header__input" type="text" id="search" name="search" placeholder="Search"></input>
             <img className="header__img" src={image} alt="profile pic of a man"></img>
-            <button className="header__button">UPLOAD</button>
+          <button className="header__button"><Link className="header__button-link" to="/upload">UPLOAD</Link></button>
         </div>
     </header> 
   )

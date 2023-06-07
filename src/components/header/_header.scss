@@ -103,19 +103,18 @@
     &__button{
     width: 100%;
     background: url("../../assets/Icons/upload.svg") no-repeat 13px center;
-    background-color: $primary-cta-color;
-    border: 0;
-    padding: 0.75rem;
-    border-radius: 4px;
-    color:$background-color;
-    line-height: 1.25rem;
-    font-weight: 700;
-        @include tablet{
-            margin: 0 1.5rem 0 1rem;
-            width: 60%
-        }
-        @include desktop{
-            width: 60%;
-        }
+    @include cta;
+    @include tablet{
+        margin: 0 1.5rem 0 1rem;
+        width: 60%
+    }
+    @include desktop{
+        width: 60%;
+    }
+    }
+
+    &__button-link{
+        text-decoration: none;
+        color:$background-color;
     }
 }
