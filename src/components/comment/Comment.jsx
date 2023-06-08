@@ -1,4 +1,4 @@
-import './_comment.scss';
+import './comment.scss';
 
 function Comment(props) {
   const commentTime=new Date(props.timestamp).toLocaleDateString();

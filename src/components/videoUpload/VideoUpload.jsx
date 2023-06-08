@@ -1,4 +1,4 @@
-import './_videoUpload.scss';
+import './videoUpload.scss';
 import thumbnail from '../../assets/Images/Upload-video-preview.jpg';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';

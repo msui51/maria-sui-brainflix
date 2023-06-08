@@ -2,9 +2,9 @@ import Views from '../../assets/Icons/views.svg'
 import Likes from '../../assets/Icons/likes.svg'
 import CommentLIst from '../commentList/CommentList';
 import VideoList from '../videoList/VideoList';
-import './_main.scss';
+import './mainPageMain.scss';
 
-function Main(props) {
+function MainPageMain(props) {
   const commentTime=new Date(props.activeVideo.timestamp).toLocaleDateString();
 
 
@@ -34,4 +34,4 @@ function Main(props) {
   )
 }
 
-export default Main
+export default MainPageMain

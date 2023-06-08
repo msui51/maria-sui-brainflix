@@ -1,6 +1,6 @@
-import './_hero.scss';
+import './mainPageHero.scss';
 
-function Hero(props) {
+function MainPageHero(props) {
   return (
     <section className="hero__wrapper">
         <video width="100%"controls poster={props.activeVideo.image}>
@@ -10,4 +10,4 @@ function Hero(props) {
   )
 }
 
-export default Hero
+export default MainPageHero

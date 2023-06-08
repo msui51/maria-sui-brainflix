@@ -1,10 +1,10 @@
-import './_header.scss';
+import './pageHeader.scss';
 import logo from '../../assets/Logo/BrainFlix-logo.svg';
 import image from '../../assets/Images/Mohan-muruge.jpg';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
-function Header(props) {
+function PageHeader(props) {
   
 
 
@@ -23,4 +23,4 @@ function Header(props) {
   )
 }
 
-export default Header
+export default PageHeader

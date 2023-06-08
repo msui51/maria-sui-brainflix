@@ -1,5 +1,5 @@
 import Video from "../video/Video"
-import './_videoList.scss';
+import './videoList.scss';
 
 function VideoList(props) {
   

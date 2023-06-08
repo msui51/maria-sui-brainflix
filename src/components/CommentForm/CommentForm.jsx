@@ -1,5 +1,5 @@
 import image from '../../assets/Images/Mohan-muruge.jpg';
-import './_commentForm.scss';
+import './commentForm.scss';
 
 function CommentForm() {
   return (

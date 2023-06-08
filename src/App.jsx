@@ -1,4 +1,4 @@
-import Header from './components/header/Header';
+import PageHeader from './components/header/PageHeader';
 import Data from '../src/assets/Data/video-details.json';
 import HomePage from '../src/pages/HomePage/HomePage';
 import VideoUploadPage from '../src/pages/VideoUploadPage/VideoUploadPage';
@@ -35,7 +35,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header/>
+      <PageHeader/>
       <Routes>
         <Route path="/" element={<HomePage activeVideo={activeVideo}
                                            videoList={videoList}
