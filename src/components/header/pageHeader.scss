@@ -66,6 +66,10 @@
         line-height: 1.25rem;
         font-weight: 700;
         color: $primary-text-color;
+        &:focus{
+            outline: none;
+            border-color: $primary-cta-color;
+        }
         @include tablet{
             margin-bottom: 0;
             width:100%;

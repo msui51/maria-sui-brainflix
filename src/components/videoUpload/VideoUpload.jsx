@@ -6,25 +6,46 @@ import { useNavigate } from 'react-router-dom';
 function VideoUpload() {
     const [title, setTitle]=useState("");
     const [text, setText]=useState("");
+    const [error, setError]=useState(false);
+    const navigate =useNavigate();
+
+    //listening to changes to input for video title
 
     const titleChangeHandler =(event)=>{
         setTitle(event.target.value);
     };
 
+    //listening to changes to input for video description
+
     const textChangeHandler =(event)=>{
         setText(event.target.value);
     };
 
-    const navigate =useNavigate();
+    //function for submitting form
+
     const handleSubmit =(event)=>{
         event.preventDefault();
         if(isFormValid()){
             alert( "uploaded successfully");
             navigate("/");
         }else{
+            setError(true);
             alert( "need to input text")
+           
         }
     }
+
+    //function for styling input border if there's an error
+
+   const styleError=(error)=>{
+    if(error){
+        return{
+            borderColor:"#D22D2D"
+        }
+    }
+   }
+
+   //function to detect if form is valid
 
     const isFormValid=()=>{
         if (!title|| !text){
@@ -54,7 +75,9 @@ function VideoUpload() {
                         name="text" 
                         placeholder="Add a title to your video"
                         value={title}
-                        onChange={titleChangeHandler}>
+                        onChange={titleChangeHandler}
+                        style={styleError(error)}
+                        >
                     </input>
                     <label className="upload__label" 
                         for ="description">
@@ -66,7 +89,9 @@ function VideoUpload() {
                         name="text" 
                         placeholder="Add a description to your video"
                         value={text}
-                        onChange={textChangeHandler}>    
+                        onChange={textChangeHandler}
+                        style={styleError(error)}
+                        >    
                     </input>
                 </div>
             </div>

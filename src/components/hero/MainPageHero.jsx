@@ -1,10 +1,12 @@
 import './mainPageHero.scss';
 
-function MainPageHero(props) {
+function MainPageHero({currentVideo}) {
   return (
+    //current video's image
+    
     <section className="hero__wrapper">
-        <video width="100%"controls poster={props.activeVideo.image}>
-        <source src={props.activeVideo.video}></source>
+        <video width="100%"controls poster={currentVideo.image}>
+        <source src={currentVideo.video}></source>
         </video>
     </section>
   )
