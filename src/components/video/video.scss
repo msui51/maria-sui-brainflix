@@ -4,6 +4,11 @@
 
 .video {
 
+    &__wrapper{
+        display:flex;
+
+    }
+
     //wraps the video image//
 
     &__wrapper--left{
