@@ -35,12 +35,26 @@ function VideoUpload() {
         }
     }
 
-    //function for styling input border if there's an error
+    // function for styling input border for title if there's an error
 
-   const styleError=(error)=>{
+   const styleErrorTitle=(error)=>{
     if(error){
-        return{
+        if(!title){
+            return{
             borderColor:"#D22D2D"
+            }
+        }
+    }
+   }
+
+    // function for styling input border for description if there's an error
+
+   const styleErrorText=(error)=>{
+    if(error){
+        if(!text){
+            return{
+            borderColor:"#D22D2D"
+            }
         }
     }
    }
@@ -76,7 +90,7 @@ function VideoUpload() {
                         placeholder="Add a title to your video"
                         value={title}
                         onChange={titleChangeHandler}
-                        style={styleError(error)}
+                        style={styleErrorTitle(error)}
                         >
                     </input>
                     <label className="upload__label" 
@@ -90,7 +104,7 @@ function VideoUpload() {
                         placeholder="Add a description to your video"
                         value={text}
                         onChange={textChangeHandler}
-                        style={styleError(error)}
+                        style={styleErrorText(error)}
                         >    
                     </input>
                 </div>
