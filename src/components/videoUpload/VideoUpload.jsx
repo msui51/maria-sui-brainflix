@@ -72,7 +72,7 @@ function VideoUpload() {
   return (
     <main className="upload">
         <h1 className="upload__title">Upload Video</h1>
-        <form className="upload__wrapper" onSubmit={handleSubmit}>
+        <form className="upload__wrapper" onSubmit={(event)=>{handleSubmit(event)}}>
            <div className="upload__image-form-wrapper">
                 <div className="upload__image-wrapper">
                     <label className="upload__label" for="image">VIDEO THUMBNAIL</label>
