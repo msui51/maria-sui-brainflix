@@ -1,7 +1,7 @@
 import image from '../../assets/Images/Mohan-muruge.jpg';
 import './commentForm.scss';
 
-function CommentForm({handleSubmit, nameChangeHandler, textChangeHandler, userName, text}) {
+function CommentForm({handleSubmit, textChangeHandler, text}) {
 
   
 
@@ -24,15 +24,6 @@ function CommentForm({handleSubmit, nameChangeHandler, textChangeHandler, userNa
                         placeholder="Add a new comment"
                         onChange={textChangeHandler}
                         value={text}>
-              </input>
-              <label className="commentForm__title" for="name">Name</label>
-              <input className="commentForm__input" 
-                        type="text" 
-                        id="name"
-                        name="name" 
-                        placeholder="Add your name"
-                        onChange={nameChangeHandler}
-                        value={userName}>
               </input>
             </div>
           </div>

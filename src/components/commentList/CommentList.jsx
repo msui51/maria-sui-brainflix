@@ -9,65 +9,75 @@ import { API_URL } from '../../util/Api';
 
 
 
-function CommentLIst({currentVideo}) {
-  const {videoId}=useParams();
-  const [comments, setComments]=useState([]);
-  const [userName, setUserName]=useState("");
-  const [text, setText]=useState("");
-  
+function CommentLIst({ currentVideo }) {
+  const { videoId } = useParams();
+  const [comments, setComments] = useState([]);
+  const [text, setText] = useState("");
 
-  const nameChangeHandler=((event)=>{
-    setUserName(event.target.value);
-  })
+// change text in form for posting new comments
 
-  const textChangeHandler=((event)=>{
+  const textChangeHandler = ((event) => {
     setText(event.target.value);
   })
 
- 
+// form submit function for posting new comments
 
-  const handleSubmit=((event)=>{
+  const handleSubmit = ((event) => {
     event.preventDefault();
-    axios.post(API_URL+`/videos/${videoId}/comments?api_key=${API_KEY}`, {
-      comment: text,
-      name: userName,
-  })
-    .then((response)=>{
-      console.log(response.data)
-      setComments(comments.push(response.data));
-    })
-    .catch((error)=>{
-      console.error(error);
-    })
+    if (videoId) {
+      axios.post(API_URL + `/videos/${videoId}/comments?api_key=${API_KEY}`, {
+        comment: text,
+        name: "maria",
+      })
+        .then((response) => {
+          console.log(response.data)
+          setComments(comments.push(response.data));
+        })
+        .catch((error) => {
+          console.error(error);
+      })} else {
+        axios.post(API_URL + `/videos/84e96018-4022-434e-80bf-000ce4cd12b8/comments?api_key=${API_KEY}`, {
+          comment: text,
+          name: "maria",
+        })
+          .then((response) => {
+            console.log(response.data)
+            setComments(comments.push(response.data));
+          })
+          .catch((error) => {
+            console.error(error);
+          })}
   });
- 
-  useEffect(()=>{
+
+// retrieving the array of comments after posting a new one  
+
+  useEffect(() => {
     setComments(currentVideo.comments)
-  },[currentVideo.comments])
+  }, [currentVideo.comments])
 
 
   return (
 
-  //includes comment form component and mapping through individual comments
+    //includes comment form component and mapping through individual comments
 
     <div className='commentList__wrapper'>
       <h2 className="commentList__title">{currentVideo.comments?.length} Comments</h2>
-      <CommentForm handleSubmit={handleSubmit} textChangeHandler={textChangeHandler} nameChangeHandler={nameChangeHandler} userName={userName} text={text}/>
+      <CommentForm handleSubmit={handleSubmit} textChangeHandler={textChangeHandler} text={text} />
       <ul className='commentList__list'>
-        {currentVideo.comments?.map((comment)=>(
-        <li className="commentList__item">
-        <Comment 
-          key={comment.id}
-          id={comment.id}
-          name={comment.name}
-          comment={comment.comment}
-          timestamp={comment.timestamp}
-          />
-      </li>
-      ))}
+        {currentVideo.comments?.map((comment) => (
+          <li className="commentList__item">
+            <Comment
+              key={comment.id}
+              id={comment.id}
+              name={comment.name}
+              comment={comment.comment}
+              timestamp={comment.timestamp}
+            />
+          </li>
+        ))}
       </ul>
     </div>
-    
+
   )
 }
 
