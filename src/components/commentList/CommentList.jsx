@@ -4,8 +4,6 @@ import CommentForm from '../CommentForm/CommentForm';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { API_KEY } from '../../util/ApiKey';
-import { API_URL } from '../../util/Api';
 
 
 
@@ -25,35 +23,39 @@ function CommentLIst({ currentVideo }) {
   const handleSubmit = ((event) => {
     event.preventDefault();
     if (videoId) {
-      axios.post(API_URL + `/videos/${videoId}/comments?api_key=${API_KEY}`, {
+      axios.post(`http://localhost:5000/videos/${videoId}/comments`, {
         comment: text,
         name: "maria",
       })
         .then((response) => {
+          // console.log(response.data)
+          return axios.get(`http://localhost:5000/videos/${videoId}/comments`)
+        })
+        .then((response)=>{
           console.log(response.data)
-          setComments(comments.push(response.data));
+          setComments(response.data)
+          setText("")
         })
         .catch((error) => {
           console.error(error);
       })} else {
-        axios.post(API_URL + `/videos/84e96018-4022-434e-80bf-000ce4cd12b8/comments?api_key=${API_KEY}`, {
+        axios.post("http://localhost:5000/videos/84e96018-4022-434e-80bf-000ce4cd12b8/comments", {
           comment: text,
           name: "maria",
         })
           .then((response) => {
             console.log(response.data)
-            setComments(comments.push(response.data));
+            // setComments(comments.push(response.data));
+           return axios.get("http://localhost:5000/videos/84e96018-4022-434e-80bf-000ce4cd12b8/comments")
+          })
+          .then((response)=>{
+            setComments(response.data);
+            setText("");
           })
           .catch((error) => {
             console.error(error);
           })}
   });
-
-// retrieving the array of comments after posting a new one  
-
-  useEffect(() => {
-    setComments(currentVideo.comments)
-  }, [currentVideo.comments])
 
 
   return (
