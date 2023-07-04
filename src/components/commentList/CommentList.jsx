@@ -49,12 +49,6 @@ function CommentLIst({ currentVideo }) {
           })}
   });
 
-// retrieving the array of comments after posting a new one  
-
-  useEffect(() => {
-    setComments(currentVideo.comments)
-  }, [currentVideo.comments])
-
 
   return (
 
