@@ -22,7 +22,7 @@ function VideoList({currentVideo, videoList}) {
             <Video 
                 key={video.id}
                 id={video.id}
-                image={video.image}
+                image={`http://localhost:5000${video.image}`}
                 title={video.title}
                 author={video.channel} 
             />

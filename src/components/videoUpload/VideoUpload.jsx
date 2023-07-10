@@ -29,7 +29,7 @@ function VideoUpload() {
         if(isFormValid()){
             axios.post("http://localhost:5000/videos",{
                 title: title,
-                description: description
+                description: description,
             })
             alert( "uploaded successfully");
             navigate("/");
