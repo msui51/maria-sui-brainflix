@@ -15,6 +15,10 @@ function Comment({name, comment, timestamp}) {
           <span className="comment__time">{commentTime(timestamp)}</span>
         </div>
         <p className="comment__text">{comment}</p>
+        <div className="comment__buttons-wrapper">
+          <button className="comment__buttons" type="button">LIKE</button>
+          <button className="comment__buttons" type="button">DELETE</button>
+        </div>
       </div>
   </>
   )
