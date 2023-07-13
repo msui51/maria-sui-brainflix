@@ -20,7 +20,7 @@ function CommentLIst({ currentVideo }) {
 
 // form submit function for posting new comments
 
-  const handleSubmit = ((event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     if (videoId) {
       axios.post(`http://localhost:5000/videos/${videoId}/comments`, {
@@ -55,7 +55,7 @@ function CommentLIst({ currentVideo }) {
           .catch((error) => {
             console.error(error);
           })}
-  });
+  };
 
 
   return (

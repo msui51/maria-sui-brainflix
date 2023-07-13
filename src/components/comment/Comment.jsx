@@ -1,8 +1,18 @@
 import './comment.scss';
 import { commentTime } from '../../util/CommonFunction'; 
+import { useParams } from 'react-router';
+import axios from 'axios';
 
 function Comment({name, comment, timestamp}) {
-  
+  const {videoId}=useParams();
+
+  const deleteComment=(event)=>{
+    event.preventDefault();
+    if(videoId){
+      axios.delete()
+    }
+  }
+
   return (
 
     //current video's individual comments
@@ -17,7 +27,7 @@ function Comment({name, comment, timestamp}) {
         <p className="comment__text">{comment}</p>
         <div className="comment__buttons-wrapper">
           <button className="comment__buttons" type="button">LIKE</button>
-          <button className="comment__buttons" type="button">DELETE</button>
+          <button className="comment__buttons" type="button" onClick={deleteComment}>DELETE</button>
         </div>
       </div>
   </>
