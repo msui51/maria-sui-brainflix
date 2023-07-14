@@ -40,6 +40,13 @@ function VideoUpload() {
         }
     }
 
+    //navigate to home page after clicking cancel button
+
+    const navigateHome=(event)=>{
+        event.preventDefault();
+        navigate("/");
+    }
+
     // function for styling input border for title if there's an error
 
    const styleErrorTitle=(error)=>{
@@ -116,7 +123,7 @@ function VideoUpload() {
             </div>
             <div className='upload__button-wrapper'>
                 <button className="upload__button" type="submit">PUBLISH</button>
-                <button className="upload__button upload__button--different">CANCEL</button>
+                <button className="upload__button upload__button--different" onClick={navigateHome}>CANCEL</button>
             </div>
         </form>
     </main>
