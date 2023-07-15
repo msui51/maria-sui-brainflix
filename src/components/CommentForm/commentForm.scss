@@ -68,6 +68,9 @@
     }
 
     &__button{
+        &:hover{
+            cursor: pointer;
+        }
         width:100%;
         background: url("../../assets/Icons/add_comment.svg")no-repeat 13px center;
         @include cta;
