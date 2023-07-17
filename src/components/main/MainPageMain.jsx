@@ -5,14 +5,11 @@ import VideoList from '../videoList/VideoList';
 import './mainPageMain.scss';
 import { commentTime } from '../../util/CommonFunction';
 
+ //includes data for current video, comment list and video list component
 
 function MainPageMain({currentVideo, videoList}) {
 
-
   return (
-
-  //includes data for current video, comment list and video list component
-
     <div className="main__wrapper--all">
       <div className="main__wrapper">
           <h1 className="main__title">{currentVideo.title}</h1>

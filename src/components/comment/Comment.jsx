@@ -1,12 +1,11 @@
 import './comment.scss';
 import { commentTime } from '../../util/CommonFunction'; 
 
-function Comment({name, comment, timestamp}) {
-  
+ //current video's individual comments
+
+function Comment({name, comment, timestamp, deleteComment}) {
+ 
   return (
-
-    //current video's individual comments
-
    <>
       <div className="comment__image"></div>
       <div className="comment__wrapper--right">
@@ -15,6 +14,9 @@ function Comment({name, comment, timestamp}) {
           <span className="comment__time">{commentTime(timestamp)}</span>
         </div>
         <p className="comment__text">{comment}</p>
+        <div className="comment__buttons-wrapper">
+          <button className="comment__buttons" type="button" onClick={deleteComment}>DELETE</button>
+        </div>
       </div>
   </>
   )

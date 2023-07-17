@@ -2,10 +2,11 @@ import './videoUpload.scss';
 import thumbnail from '../../assets/Images/Upload-video-preview.jpg';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function VideoUpload() {
     const [title, setTitle]=useState("");
-    const [text, setText]=useState("");
+    const [description, setDescription]=useState("");
     const [error, setError]=useState(false);
     const navigate =useNavigate();
 
@@ -17,8 +18,8 @@ function VideoUpload() {
 
     //listening to changes to input for video description
 
-    const textChangeHandler =(event)=>{
-        setText(event.target.value);
+    const descriptionChangeHandler =(event)=>{
+        setDescription(event.target.value);
     };
 
     //function for submitting form
@@ -26,6 +27,10 @@ function VideoUpload() {
     const handleSubmit =(event)=>{
         event.preventDefault();
         if(isFormValid()){
+            axios.post("http://localhost:5000/videos",{
+                title: title,
+                description: description,
+            })
             alert( "uploaded successfully");
             navigate("/");
         }else{
@@ -35,12 +40,33 @@ function VideoUpload() {
         }
     }
 
-    //function for styling input border if there's an error
+    //navigate to home page after clicking cancel button
 
-   const styleError=(error)=>{
+    const navigateHome=(event)=>{
+        event.preventDefault();
+        navigate("/");
+    }
+
+    // function for styling input border for title if there's an error
+
+   const styleErrorTitle=(error)=>{
     if(error){
-        return{
+        if(!title){
+            return{
             borderColor:"#D22D2D"
+            }
+        }
+    }
+   }
+
+    // function for styling input border for description if there's an error
+
+   const styleErrorDescription=(error)=>{
+    if(error){
+        if(!description){
+            return{
+            borderColor:"#D22D2D"
+            }
         }
     }
    }
@@ -48,7 +74,7 @@ function VideoUpload() {
    //function to detect if form is valid
 
     const isFormValid=()=>{
-        if (!title|| !text){
+        if (!title|| !description){
             return false;
         };
         return true;
@@ -58,7 +84,7 @@ function VideoUpload() {
   return (
     <main className="upload">
         <h1 className="upload__title">Upload Video</h1>
-        <form className="upload__wrapper" onSubmit={handleSubmit}>
+        <form className="upload__wrapper" onSubmit={(event)=>{handleSubmit(event)}}>
            <div className="upload__image-form-wrapper">
                 <div className="upload__image-wrapper">
                     <label className="upload__label" for="image">VIDEO THUMBNAIL</label>
@@ -76,7 +102,7 @@ function VideoUpload() {
                         placeholder="Add a title to your video"
                         value={title}
                         onChange={titleChangeHandler}
-                        style={styleError(error)}
+                        style={styleErrorTitle(error)}
                         >
                     </input>
                     <label className="upload__label" 
@@ -88,16 +114,16 @@ function VideoUpload() {
                         id="text" 
                         name="text" 
                         placeholder="Add a description to your video"
-                        value={text}
-                        onChange={textChangeHandler}
-                        style={styleError(error)}
+                        value={description}
+                        onChange={descriptionChangeHandler}
+                        style={styleErrorDescription(error)}
                         >    
                     </input>
                 </div>
             </div>
             <div className='upload__button-wrapper'>
                 <button className="upload__button" type="submit">PUBLISH</button>
-                <button className="upload__button upload__button--different">CANCEL</button>
+                <button className="upload__button upload__button--different" onClick={navigateHome}>CANCEL</button>
             </div>
         </form>
     </main>
