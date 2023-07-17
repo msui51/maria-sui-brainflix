@@ -40,4 +40,14 @@
         margin-top: 0;
     }
 
+    //delete button//
+
+    &__buttons{
+        @include cta;
+        width:20%;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
 }
