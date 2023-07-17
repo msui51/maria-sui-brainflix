@@ -17,6 +17,7 @@
 
     &__wrapper--right{
         margin-left:1rem;
+        width:100%;
     }
 
     //wraps just name and time//
@@ -38,6 +39,14 @@
     &__text{
         line-height: 25px;
         margin-top: 0;
+    }
+
+     //wraps around like and delete buttons//
+
+     &__buttons-wrapper{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 1rem;
     }
 
     //delete button//
