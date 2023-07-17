@@ -2,10 +2,11 @@ import './commentList.scss';
 import Comment from '../comment/Comment';
 import CommentForm from '../CommentForm/CommentForm';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 
+//includes comment form component and mapping through individual comments
 
 function CommentLIst({ currentVideo }) {
   const { videoId, commentId } = useParams();
@@ -18,7 +19,6 @@ function CommentLIst({ currentVideo }) {
   const textChangeHandler = ((event) => {
     setText(event.target.value);
   })
-
 
 
 // form submit function for posting new comments
@@ -81,11 +81,7 @@ function CommentLIst({ currentVideo }) {
     }
   }
  
-
-
   return (
-
-    //includes comment form component and mapping through individual comments
 
     <div className='commentList__wrapper'>
       <h2 className="commentList__title">{currentVideo.comments?.length} Comments</h2>

@@ -2,6 +2,7 @@ import Video from "../video/Video"
 import './videoList.scss';
 import { Link } from "react-router-dom"
 
+//mapping through the list of videos
 
 function VideoList({currentVideo, videoList}) {
 
@@ -10,9 +11,6 @@ function VideoList({currentVideo, videoList}) {
   }
 
   return (
-
-    //mapping through the list of videos
-
     <div className="videoList__wrapper">
         <h2 className="videoList__title">NEXT VIDEOS</h2>
         <ul className="videoList__list">

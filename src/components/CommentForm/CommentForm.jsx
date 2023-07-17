@@ -1,14 +1,11 @@
 import image from '../../assets/Images/Mohan-muruge.jpg';
 import './commentForm.scss';
 
+//form to submit comments for the current video
+
 function CommentForm({handleSubmit, textChangeHandler, text}) {
 
-  
-
   return (
-
-    //form to submit comments for the current video
-
     <div className="commentForm__wrapper">
         <div className="commentForm__wrapper--left">
             <img className="commentForm__image" src={image} alt="profile pic of a man"></img>

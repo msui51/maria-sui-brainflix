@@ -6,13 +6,11 @@
 
     &__wrapper{
         display:flex;
-
     }
 
     //wraps the video image//
 
     &__wrapper--left{
-    //    width: 40%;
        flex-shrink: 0;
        margin-right: 1rem;
     }

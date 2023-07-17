@@ -1,12 +1,11 @@
 import './video.scss'
 
+    //individual videos in the video list
+
+
 function Video({image, title, author}) {
 
-  
-  return (
-
-    //individual videos in the video list
-    
+  return (    
     <div className='video__wrapper'>
         <div className="video__wrapper--left">
             <img className="video__image" src={image} alt="video images"></img>

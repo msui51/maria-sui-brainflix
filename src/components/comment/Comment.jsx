@@ -1,15 +1,11 @@
 import './comment.scss';
 import { commentTime } from '../../util/CommonFunction'; 
-import { useParams } from 'react-router';
-import { useState } from 'react';
-import axios from 'axios';
+
+ //current video's individual comments
 
 function Comment({name, comment, timestamp, deleteComment}) {
  
   return (
-
-    //current video's individual comments
-
    <>
       <div className="comment__image"></div>
       <div className="comment__wrapper--right">

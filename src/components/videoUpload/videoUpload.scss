@@ -12,11 +12,15 @@
         padding: 1rem 6rem;
     }
 
+    //page title
+
     &__title{
         @include tablet{
         padding-bottom: 1rem;
         }
     }
+
+    //wraps image and form input field and buttons
 
     &__wrapper{
         padding:0;
@@ -27,6 +31,8 @@
         }
     }
 
+    //wraps image and form input
+
     &__image-form-wrapper{
         @include desktop{
             display:flex;
@@ -34,6 +40,8 @@
             width:100%;
         }
     }
+
+    //wraps just the image
 
     &__image-wrapper{
         @include desktop{
@@ -57,11 +65,15 @@
         }
     }
 
+    //wraps the form inputs
+
     &__form-wrapper{
         @include desktop{
             width:70%;
         }
     }
+
+    //labels for form input fields
 
     &__label{
         color:$secondary-text-color; 
@@ -76,6 +88,8 @@
         }
     }
     
+    //form input fields
+
     &__input{
         width:100%;
         border:1px solid $divider-line;
@@ -89,13 +103,14 @@
     }
 
     &__input--title{
-        padding: 0.75rem 0 0.75rem 0.75rem;
-        
+        padding: 0.75rem 0 0.75rem 0.75rem;    
     }
 
     &__input--description{
         padding: 0.75rem 0 4rem 0.75rem;
     }
+
+    //wraps the buttons
 
     &__button-wrapper{
         margin-top: 2rem;
@@ -104,9 +119,10 @@
             flex-direction: row-reverse;
             border-top: 1px solid $divider-line;
             padding-top: 2rem;
-        }
-      
+        }   
     }
+
+    //button for upload
 
     &__button{
         display:block;
@@ -126,6 +142,8 @@
         }
     }
 
+    //button for cancel
+    
     &__button--different{
         background-color: white;
         color: $primary-cta-color;
