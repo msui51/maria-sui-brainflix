@@ -41,19 +41,19 @@
         margin-top: 0;
     }
 
-    //wraps around like and delete buttons//
+     //wraps around like and delete buttons//
 
-    &__buttons-wrapper{
-        display: flex;
-        justify-content: space-between;
+     &__buttons-wrapper{
         padding-bottom: 1rem;
     }
 
-    //like and delete buttons//
+    //delete button//
 
     &__buttons{
         @include cta;
-        width:20%;
+        @include tablet{
+            width:20%;
+        }
         &:hover{
             cursor: pointer;
         }

@@ -17,7 +17,7 @@ function PageHeader(props) {
         <div className="header__input-wrapper">                
             <input className="header__input" type="text" id="search" name="search" placeholder="Search"></input>
             <img className="header__img" src={image} alt="profile pic of a man"></img>
-          <button className="header__button"><Link className="header__button-link" to="/upload">UPLOAD</Link></button>
+            <Link className="header__button-link" to="/upload"><button className="header__button">UPLOAD</button></Link>
         </div>
     </header> 
   )

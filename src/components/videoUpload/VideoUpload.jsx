@@ -6,7 +6,7 @@ import axios from 'axios';
 
 function VideoUpload() {
     const [title, setTitle]=useState("");
-    const [text, setText]=useState("");
+    const [description, setDescription]=useState("");
     const [error, setError]=useState(false);
     const navigate =useNavigate();
 
@@ -18,8 +18,8 @@ function VideoUpload() {
 
     //listening to changes to input for video description
 
-    const textChangeHandler =(event)=>{
-        setText(event.target.value);
+    const descriptionChangeHandler =(event)=>{
+        setDescription(event.target.value);
     };
 
     //function for submitting form
@@ -27,6 +27,10 @@ function VideoUpload() {
     const handleSubmit =(event)=>{
         event.preventDefault();
         if(isFormValid()){
+            axios.post("http://localhost:5000/videos",{
+                title: title,
+                description: description,
+            })
             alert( "uploaded successfully");
             navigate("/");
         }else{
@@ -34,6 +38,13 @@ function VideoUpload() {
             alert( "need to input text")
            
         }
+    }
+
+    //navigate to home page after clicking cancel button
+
+    const navigateHome=(event)=>{
+        event.preventDefault();
+        navigate("/");
     }
 
     // function for styling input border for title if there's an error
@@ -50,9 +61,9 @@ function VideoUpload() {
 
     // function for styling input border for description if there's an error
 
-   const styleErrorText=(error)=>{
+   const styleErrorDescription=(error)=>{
     if(error){
-        if(!text){
+        if(!description){
             return{
             borderColor:"#D22D2D"
             }
@@ -63,7 +74,7 @@ function VideoUpload() {
    //function to detect if form is valid
 
     const isFormValid=()=>{
-        if (!title|| !text){
+        if (!title|| !description){
             return false;
         };
         return true;
@@ -103,16 +114,16 @@ function VideoUpload() {
                         id="text" 
                         name="text" 
                         placeholder="Add a description to your video"
-                        value={text}
-                        onChange={textChangeHandler}
-                        style={styleErrorText(error)}
+                        value={description}
+                        onChange={descriptionChangeHandler}
+                        style={styleErrorDescription(error)}
                         >    
                     </input>
                 </div>
             </div>
             <div className='upload__button-wrapper'>
                 <button className="upload__button" type="submit">PUBLISH</button>
-                <button className="upload__button upload__button--different">CANCEL</button>
+                <button className="upload__button upload__button--different" onClick={navigateHome}>CANCEL</button>
             </div>
         </form>
     </main>

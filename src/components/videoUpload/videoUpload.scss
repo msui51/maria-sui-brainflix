@@ -114,6 +114,9 @@
         margin-bottom: 2rem;
         background:url("../../assets/Icons/publish.svg") no-repeat 13px center;
         @include cta;
+        &:hover{
+            cursor: pointer;
+        }
         @include tablet{
             display:inline;
             width: 25%;
@@ -126,6 +129,9 @@
     &__button--different{
         background-color: white;
         color: $primary-cta-color;
+        &:hover{
+            cursor: pointer;
+        }
     }
 
   

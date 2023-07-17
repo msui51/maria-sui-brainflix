@@ -72,7 +72,7 @@
         }
         @include tablet{
             margin-bottom: 0;
-            width:100%;
+            width:60%;
             padding: 0.75rem 0 0.75rem 2.75rem;
             margin-right: 1rem;
         }
@@ -90,6 +90,10 @@
           height: 2.5rem;
           order: 3;
           position: initial;
+          margin-left: 2rem;
+        }
+        @include desktop{
+            margin-left: 2.4rem;
         }
     }
 
@@ -108,12 +112,16 @@
     width: 100%;
     background: url("../../assets/Icons/upload.svg") no-repeat 13px center;
     @include cta;
+    &:hover{
+        cursor:pointer;
+    }
     @include tablet{
-        margin: 0 1.5rem 0 1rem;
-        width: 60%
+        margin: 0 2.5rem 0 1rem;
+        
     }
     @include desktop{
-        width: 60%;
+        width: 100%;
+        margin: 0 3rem 0 1rem;
     }
     }
 

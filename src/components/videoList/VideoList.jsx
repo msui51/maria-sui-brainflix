@@ -5,7 +5,9 @@ import { Link } from "react-router-dom"
 
 function VideoList({currentVideo, videoList}) {
 
-
+  const scrollTo=()=>{
+    window.scrollTo(0,0);
+  }
 
   return (
 
@@ -18,7 +20,7 @@ function VideoList({currentVideo, videoList}) {
             .filter((video)=> currentVideo.id !== video.id)
             .map((video)=>(
             <li className="videoList__item">
-            <Link className="videoList__link" to={`/videos/${video.id}`}> 
+            <Link className="videoList__link" onClick={scrollTo} to={`/videos/${video.id}`}> 
             <Video 
                 key={video.id}
                 id={video.id}
