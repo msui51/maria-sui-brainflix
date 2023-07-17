@@ -54,6 +54,9 @@
     &__buttons{
         @include cta;
         width:20%;
+        &:hover{
+            cursor: pointer;
+        }
     }
 
 }

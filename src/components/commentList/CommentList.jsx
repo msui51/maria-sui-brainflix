@@ -8,15 +8,18 @@ import { useParams } from 'react-router-dom';
 
 
 function CommentLIst({ currentVideo }) {
-  const { videoId } = useParams();
+  const { videoId, commentId } = useParams();
   const [comments, setComments] = useState([]);
   const [text, setText] = useState("");
+  
 
 // change text in form for posting new comments
 
   const textChangeHandler = ((event) => {
     setText(event.target.value);
   })
+
+ 
 
 // form submit function for posting new comments
 
@@ -28,7 +31,6 @@ function CommentLIst({ currentVideo }) {
         name: "maria",
       })
         .then((response) => {
-          // console.log(response.data)
           return axios.get(`http://localhost:5000/videos/${videoId}/comments`)
         })
         .then((response)=>{
@@ -45,7 +47,6 @@ function CommentLIst({ currentVideo }) {
         })
           .then((response) => {
             console.log(response.data)
-            // setComments(comments.push(response.data));
            return axios.get("http://localhost:5000/videos/84e96018-4022-434e-80bf-000ce4cd12b8/comments")
           })
           .then((response)=>{
@@ -56,6 +57,31 @@ function CommentLIst({ currentVideo }) {
             console.error(error);
           })}
   };
+
+//to delete a comment
+
+  const deleteComment=()=>{
+    if(videoId){
+      axios.delete(`http://localhost:5000/videos/${videoId}/comments/${commentId}`)
+      .then((response)=>{
+        return axios.get(`http://localhost:5000/videos/${videoId}`)
+      }).then((response)=>{
+        setComments(response.data.comments)
+      }).catch((err)=>{
+        console.error("err")
+      })
+    } else {
+        axios.delete(`http://localhost:5000/videos/84e96018-4022-434e-80bf-000ce4cd12b8/comments/${commentId}`)
+        .then((response)=>{
+          return axios.get("http://localhost:5000/videos/84e96018-4022-434e-80bf-000ce4cd12b8")
+        }).then((response)=>{
+          setComments(response.data.comments)
+        }).catch((err)=>{
+          console.error("err")
+        })
+    }
+  }
+
 
 
   return (
@@ -74,6 +100,7 @@ function CommentLIst({ currentVideo }) {
               name={comment.name}
               comment={comment.comment}
               timestamp={comment.timestamp}
+              deleteComment={deleteComment}
             />
           </li>
         ))}

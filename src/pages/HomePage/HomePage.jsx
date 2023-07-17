@@ -3,14 +3,14 @@ import MainPageMain from '../../components/main/MainPageMain';
 import { useParams} from 'react-router-dom';
 import { useState, useEffect } from 'react'; 
 import axios from 'axios';
-// import { API_URL } from '../../util/Api';
-// import { API_KEY } from '../../util/ApiKey';
+
 
 
 function HomePage() {
   const [currentVideo, setCurrentVideo]=useState({});
   const [videoList, setVideoList]= useState([]);
   const {videoId} =useParams();
+
 
   
 // get video list data from API
@@ -36,6 +36,7 @@ function HomePage() {
 
     }
   },[videoId])
+
 
   
   return (
