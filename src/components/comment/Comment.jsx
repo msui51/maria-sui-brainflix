@@ -15,6 +15,9 @@ function Comment({name, comment, timestamp, deleteComment}) {
           <span className="comment__time">{commentTime(timestamp)}</span>
         </div>
         <p className="comment__text">{comment}</p>
+        <div className="comment__buttons-wrapper">
+          <button className="comment__buttons" type="button" onClick={deleteComment}>DELETE</button>
+        </div>
       </div>
   </>
   )
