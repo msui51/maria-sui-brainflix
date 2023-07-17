@@ -19,7 +19,7 @@ function CommentLIst({ currentVideo }) {
     setText(event.target.value);
   })
 
- 
+
 
 // form submit function for posting new comments
 
@@ -34,7 +34,6 @@ function CommentLIst({ currentVideo }) {
           return axios.get(`http://localhost:5000/videos/${videoId}/comments`)
         })
         .then((response)=>{
-          console.log(response.data)
           setComments(response.data)
           setText("")
         })
@@ -46,7 +45,6 @@ function CommentLIst({ currentVideo }) {
           name: "maria",
         })
           .then((response) => {
-            console.log(response.data)
            return axios.get("http://localhost:5000/videos/84e96018-4022-434e-80bf-000ce4cd12b8/comments")
           })
           .then((response)=>{
@@ -58,6 +56,7 @@ function CommentLIst({ currentVideo }) {
           })}
   };
 
+  
 //to delete a comment
 
   const deleteComment=()=>{
@@ -81,7 +80,7 @@ function CommentLIst({ currentVideo }) {
         })
     }
   }
-
+ 
 
 
   return (
