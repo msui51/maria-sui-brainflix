@@ -9,7 +9,7 @@ import { useParams } from 'react-router-dom';
 
 
 function CommentLIst({ currentVideo }) {
-  const { videoId } = useParams();
+  const { videoId, commentId } = useParams();
   const [comments, setComments] = useState([]);
   const [text, setText] = useState("");
 
@@ -58,6 +58,30 @@ function CommentLIst({ currentVideo }) {
           })}
   });
 
+  //to delete a comment
+
+  const deleteComment=()=>{
+    if(videoId){
+      axios.delete(`http://localhost:5000/videos/${videoId}/comments/${commentId}`)
+      .then((response)=>{
+        return axios.get(`http://localhost:5000/videos/${videoId}`)
+      }).then((response)=>{
+        setComments(response.data.comments)
+      }).catch((err)=>{
+        console.error("err")
+      })
+    } else {
+        axios.delete(`http://localhost:5000/videos/84e96018-4022-434e-80bf-000ce4cd12b8/comments/${commentId}`)
+        .then((response)=>{
+          return axios.get("http://localhost:5000/videos/84e96018-4022-434e-80bf-000ce4cd12b8")
+        }).then((response)=>{
+          setComments(response.data.comments)
+        }).catch((err)=>{
+          console.error("err")
+        })
+    }
+  }
+
 
   return (
 
@@ -75,6 +99,7 @@ function CommentLIst({ currentVideo }) {
               name={comment.name}
               comment={comment.comment}
               timestamp={comment.timestamp}
+              deleteComment={deleteComment}
             />
           </li>
         ))}

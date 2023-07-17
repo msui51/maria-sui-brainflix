@@ -1,7 +1,7 @@
 import './comment.scss';
 import { commentTime } from '../../util/CommonFunction'; 
 
-function Comment({name, comment, timestamp}) {
+function Comment({name, comment, timestamp, deleteComment}) {
   
   return (
 
